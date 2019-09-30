@@ -1,22 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:padding="16dp">
 
-    <android.support.v7.widget.AppCompatImageButton
-        android:id="@+id/img_button_2"
+    <RelativeLayout
+        android:id="@+id/layout_foto"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_person"
+            android:background="#00a8ec"/>
+
+        <ImageButton
+            android:id="@+id/bt_foto"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_photo"
+            android:background="@drawable/fundo"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layout_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_foto">
+        <EditText
+            android:id="@+id/txt_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Seu nome...">
+        </EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layout_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_nome">
+        <EditText
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Seu e-mail...">
+        </EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/container_tel_cep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/layout_email">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layout_telefone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/txt_celular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Seu telefone...">
+            </EditText>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layout_cep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/txt_cep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Seu CEP...">
+            </EditText>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+    
+    <RatingBar
+        android:id="@+id/rating_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_touch"/>
+        android:numStars="5"
+        android:max="10"
+        android:layout_below="@id/container_tel_cep"/>
 
-    <android.support.v7.widget.AppCompatImageButton
-        android:id="@+id/img_fotos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_camera"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="SALVAR"
+        android:layout_below="@id/rating_bar"
+        android:layout_marginTop="2dp"/>
 
-</LinearLayout>
+</RelativeLayout>
